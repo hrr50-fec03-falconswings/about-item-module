@@ -7,9 +7,9 @@ module.exports = {
       res.json(results);
     });
   },
-  getProdCategory(req, res) {
+  getProductCategory(req, res) {
     let category = req.params.category;
-    models.products.getProdCategory(category, (results) => {
+    models.products.getProductCategory(category, (results) => {
       res.json(results);
     });
   }

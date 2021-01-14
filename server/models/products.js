@@ -8,7 +8,7 @@ module.exports = {
       error ? console.error(error) : callback(results);
     });
   },
-  getProdCategory(params, callback) {
+  getProductCategory(params, callback) {
     console.log(params);
     let queryString = 'select * from products where product_category = ?';
     db.query(queryString, params, (error, results) => {

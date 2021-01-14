@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/products/id/:prodId', controllers.products.getProduct);
 
-app.get('/api/products/:category', controllers.products.getProdCategory);
+app.get('/api/products/:category', controllers.products.getProductCategory);
 
 
 
