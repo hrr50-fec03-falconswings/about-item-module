@@ -5,8 +5,15 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-
+      selectedProduct: {},
+      relatedProducts: []
     }
+  }
+
+  componentDidMount() {
+    this.props.services.products.getProduct([1], (results) => {
+      console.log(results);
+    });
   }
 
   render() {

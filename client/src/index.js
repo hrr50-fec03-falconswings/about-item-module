@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// import services
+import services from '../services';
+
 // import main App component
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App services={services} />, document.getElementById('root'));
