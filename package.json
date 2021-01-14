@@ -9,9 +9,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db": "mysql -u root < sever/schema.sql",
+    "db": "mysql -u root < server/schema.sql",
     "build": "webpack --watch",
-    "start": "nodemon server"
+    "start": "nodemon server -w"
   },
   "dependencies": {
     "express": "^4.17.1",
