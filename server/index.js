@@ -12,8 +12,6 @@ app.get('/api/products/id/:prodId', controllers.products.getProduct);
 
 app.get('/api/products/:category', controllers.products.getProductCategory);
 
-
-
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

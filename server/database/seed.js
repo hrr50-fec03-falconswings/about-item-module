@@ -66,6 +66,8 @@ const seedDatabase = () => {
       error ? console.error(error) : console.log(results);
     });
   });
+
+  db.end();
 }
 
 seedDatabase();
