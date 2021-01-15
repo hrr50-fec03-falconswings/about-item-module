@@ -1,22 +1,22 @@
 module.exports = {
-  getProduct(params, callback) {
+  getProduct(prodId, callback) {
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
     };
 
-    fetch(`http://localhost:3000/api/products/id/${params[0]}`, requestOptions)
+    fetch(`http://localhost:3000/api/products/id/${prodId}`, requestOptions)
       .then(response => response.text())
       .then(result => callback(JSON.parse(result)))
       .catch(error => console.error('error ', error));
   },
-  getProductCategory (params, callback) {
+  getProductCategory (category, callback) {
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
     };
 
-    fetch(`http://localhost:3000/api/products/electronics${params[0]}`, requestOptions)
+    fetch(`http://localhost:3000/api/products/${category}`, requestOptions)
       .then(response => response.text())
       .then(result => callback(JSON.parse(result)))
       .catch(error => console.error('error ', error));
