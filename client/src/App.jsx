@@ -1,4 +1,9 @@
 import React from 'react';
+import faker from 'faker';
+
+// import child component(s)
+import AboutList from './components/AboutList';
+import RelatedList from './components/RelatedList';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,14 +16,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.props.services.products.getProduct([1], (results) => {
+    this.props.services.products.getProduct(1, (results) => {
       console.log(results);
+      this.setState({
+        selectedProduct: results[0]
+      });
     });
   }
 
   render() {
     return (
-      <h1>Yo</h1>
+      <div className="app-render">
+        <RelatedList />
+        <AboutList
+          selectedProduct={this.state.selectedProduct} />
+      </div>
     );
   }
 }
