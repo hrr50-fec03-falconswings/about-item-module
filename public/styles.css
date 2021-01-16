@@ -3,6 +3,15 @@
   font-family: BogleRegular;
   src: url('/assets/OTF/Bogle-Regular.otf');
 }
+@font-face {
+  font-family: BogleBlack;
+  src: url('/assets/OTF/Bogle-Black.otf');
+}
+@font-face {
+  font-family: BogleBold;
+  src: url('/assets/OTF/Bogle-Bold.otf');
+}
+
 
 * {
   padding: 0;
@@ -19,7 +28,7 @@ body {
   background-color: rgb(36, 32, 36);
   color: whitesmoke;
   */
-  background-color: whitesmoke;
+  background-color: white;
   font-family: BogleRegular;
 
   max-width: 1360px;
@@ -27,21 +36,34 @@ body {
 }
 
 .app-render {
-  margin: 0rem 1rem;
+  padding: 0rem 1.25rem;
   margin-top: 1rem;
 
-  border-top: 1px solid lightgray;
   display: grid;
 }
 
-.related-list-carousel {
-  padding: 2rem .4rem;
+.image-slider-container {
+  padding: 0rem 1.2rem;
   grid-row: 1;
-  /* margin-top: 2rem; */
+
+  border-top: 2px solid rgb(230, 228, 228);
+  border-bottom: 2px solid rgb(230, 228, 228);
 }
 
-.about-item-section {
+.image-slider-container h2 {
+  padding: 2rem 0rem;
+}
+
+.product-info-container {
+  background-color: #ffffff;
+
   grid-row: 2;
   width: 75%;
   margin-right: auto;
+  padding: 1.5rem 0rem;
+}
+
+.product-info-container h2 {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 }

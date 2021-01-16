@@ -2,9 +2,8 @@ import React from 'react';
 
 const ImageSlider = () => {
   return(
-    <div className="related-item-list">
-
-      <h2>Customers also viewed these products</h2>
+    <div className="image-slider-container">
+      <h2 className="slider-header">Customers also bought these products</h2>
     </div>
   );
 };
