@@ -13,14 +13,22 @@ class App extends React.Component {
       selectedProduct: {},
       relatedProducts: []
     }
+
+    this.productServices = this.props.services.products;
   }
 
   componentDidMount() {
-    this.props.services.products.getProduct(1, (results) => {
+    this.productServices.getProduct(1, (results) => {
       console.log(results);
-      this.setState({
-        selectedProduct: results
-      });
+      this.productServices.getProductCategory(results.product_category, (results) => {
+        let selected = results.splice(0, 1);
+        let related = [...results];
+        console.log(related)
+        this.setState({
+          selectedProduct: selected[0],
+          relatedProducts: related
+        });
+      })
     });
   }
 
