@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AboutItem = ({ selectedProduct }) => {
+const ProductInfo = ({ selectedProduct }) => {
   if (selectedProduct != undefined) {
     return(
       <div className="about-item-section">
@@ -17,4 +17,4 @@ const AboutItem = ({ selectedProduct }) => {
   }
 };
 
-export default AboutItem;
+export default ProductInfo;

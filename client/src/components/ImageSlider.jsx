@@ -1,11 +1,12 @@
 import React from 'react';
 
-const RelatedList = () => {
+const ImageSlider = () => {
   return(
     <div className="related-item-list">
+
       <h2>Customers also viewed these products</h2>
     </div>
   );
 };
 
-export default RelatedList;
+export default ImageSlider;

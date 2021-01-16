@@ -2,8 +2,8 @@ import React from 'react';
 import faker from 'faker';
 
 // import child component(s)
-import AboutItem from './components/AboutItem';
-import RelatedItemList from './components/RelatedItemList';
+import ProductInfo from './components/ProductInfo';
+import ImageSlider from './components/ImageSlider';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,8 +27,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-render">
-        <RelatedItemList />
-        <AboutItem
+        <ImageSlider />
+        <ProductInfo
           selectedProduct={this.state.selectedProduct} />
       </div>
     );
