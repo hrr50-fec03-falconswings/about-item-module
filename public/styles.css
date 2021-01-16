@@ -47,6 +47,7 @@ body {
 }
 
 .button-wrapper {
+  /* see: https://stackoverflow.com/questions/44871655/how-to-prevent-splitting-of-anchor-tag-text-across-two-lines-while-resizing */
   white-space: nowrap;
 }
 

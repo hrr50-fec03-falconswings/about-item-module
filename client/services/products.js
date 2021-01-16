@@ -24,8 +24,10 @@ module.exports = {
       .then(response => response.text())
       .then(result => {
         result = JSON.parse(result);
-        result[0].specifications = JSON.parse(result[0].specifications);
-        callback(result[0]);
+        result.forEach((product) => {
+          product.specifications = JSON.parse(product.specifications);
+        })
+        callback(result);
       })
       .catch(error => console.error('error ', error));
   }
