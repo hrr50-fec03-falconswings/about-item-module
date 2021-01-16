@@ -19,7 +19,7 @@ class App extends React.Component {
     this.props.services.products.getProduct(1, (results) => {
       console.log(results);
       this.setState({
-        selectedProduct: results[0]
+        selectedProduct: results
       });
     });
   }

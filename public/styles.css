@@ -42,8 +42,16 @@ body {
   display: grid;
 }
 
+.writing-bold {
+  font-family: BogleBold;
+}
+
+.button-wrapper {
+  white-space: nowrap;
+}
+
 .image-slider-container {
-  padding: 0rem 1.2rem;
+  padding: 0rem 1.25rem;
   grid-row: 1;
 
   border-top: 2px solid rgb(230, 228, 228);
@@ -67,3 +75,27 @@ body {
   margin-top: 1rem;
   padding-bottom: 1rem;
 }
+
+.product-info-container h3 {
+  margin: .5rem 0rem;
+  font-size: 1.25rem;
+}
+
+.product-info-container p {
+  font-size: .875rem;
+}
+
+.product-info-container p a {
+  color: rgb(40, 40, 40);
+}
+
+.product-info-disclaimer {
+  margin-top: .5rem;
+  padding-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.product-info-details {
+  margin-top: .875rem;
+}
+
