@@ -3,7 +3,7 @@ import React from 'react';
 // import child component(s)
 import ProductSpecs from './ProductSpecs';
 
-const ProductInfo = ({ selectedProduct }) => {
+const ProductInfo = ({ selectedProduct, relatedProducts }) => {
   if (selectedProduct != undefined) {
     return(
       <div className="product-info-container">
@@ -19,7 +19,7 @@ const ProductInfo = ({ selectedProduct }) => {
         </div>
         <p className="product-info-details">{selectedProduct.details}</p>
         <h3>Specifications</h3>
-        <ProductSpecs />
+        <ProductSpecs selectedProduct={selectedProduct} />
       </div>
     );
   } else {

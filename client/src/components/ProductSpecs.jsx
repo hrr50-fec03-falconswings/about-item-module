@@ -1,14 +1,18 @@
 import React from 'react';
 
-const ProductSpecs = () => {
-  return (
+const ProductSpecs = ({ selectedProduct }) => {
+  if (selectedProduct.specifications !== undefined) {
+    return (
     <table>
       <tbody>
-        <tr><td>1</td><td>2</td></tr>
-        <tr><td>1</td><td>2</td></tr>
+        {selectedProduct.specifications.map((spec) => (
+          <tr><td>{spec[0]}</td><td>{spec[1]}</td></tr>
+        ))}
       </tbody>
     </table>
   );
+
+  } else return null;
 };
 
 export default ProductSpecs;

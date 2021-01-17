@@ -37,7 +37,8 @@ class App extends React.Component {
       <div className="app-render">
         <ImageSlider />
         <ProductInfo
-          selectedProduct={this.state.selectedProduct} />
+          selectedProduct={this.state.selectedProduct}
+          relatedProducts={this.state.relatedProducts} />
       </div>
     );
   }
