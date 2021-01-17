@@ -24,12 +24,14 @@ html {
 }
 
 body {
-  /* dark mode
-  background-color: rgb(36, 32, 36);
-  color: whitesmoke;
-  */
-  background-color: white;
+  /* dark mode */
+  /* background-color: rgb(36, 32, 36);
+  color: whitesmoke; */
+
+
+  /* walmart uses this font + letter spacing */
   font-family: BogleRegular;
+  letter-spacing: -.02rem;
 
   max-width: 1360px;
   margin: auto;
@@ -60,8 +62,6 @@ body {
 }
 
 .product-info-container {
-  background-color: #ffffff;
-
   grid-row: 2;
   width: 75%;
   margin-right: auto;
@@ -87,9 +87,7 @@ body {
 
 .product-info-container p {
   font-size: .875rem;
-}
-
-.product-info-container p a {
+  letter-spacing: .015rem;
 }
 
 .product-info-disclaimer {
@@ -105,6 +103,7 @@ body {
 /* Specifications Table */
 .product-spec-table {
   width: 100%;
+  margin-top: 1rem;
 }
 
 .product-spec-row-0 {
