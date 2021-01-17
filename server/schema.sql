@@ -6,6 +6,8 @@ create table products (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NOT NULL,
   images TEXT NOT NULL,
+  price INT NOT NULL,
+  reviews INT NOT NULL,
   details TEXT NOT NULL,
   specifications TEXT NOT NULL,
   product_category VARCHAR(30) NOT NULL,
