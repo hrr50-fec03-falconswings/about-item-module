@@ -46,10 +46,6 @@ body {
   font-family: BogleBold;
 }
 
-.button-wrapper {
-  /* see: https://stackoverflow.com/questions/44871655/how-to-prevent-splitting-of-anchor-tag-text-across-two-lines-while-resizing */
-  white-space: nowrap;
-}
 
 .image-slider-container {
   padding: 0rem 1.25rem;
@@ -70,6 +66,13 @@ body {
   width: 75%;
   margin-right: auto;
   padding: 1.5rem 0rem;
+  padding-right: .5rem;
+}
+
+.disclaimer-button-wrapper {
+  /* forces the a tag to stay on one line */
+  white-space: nowrap;
+  color: rgb(40, 40, 40);
 }
 
 .product-info-container h2 {
@@ -87,7 +90,6 @@ body {
 }
 
 .product-info-container p a {
-  color: rgb(40, 40, 40);
 }
 
 .product-info-disclaimer {
@@ -100,3 +102,16 @@ body {
   margin-top: .875rem;
 }
 
+/* Specifications Table */
+.product-spec-table {
+  width: 100%;
+}
+
+.product-spec-row-0 {
+  background-color: rgba(148, 148, 153, 0.1);
+}
+
+.product-spec-entry {
+  font-size: .875rem;
+  padding: 1rem;
+}

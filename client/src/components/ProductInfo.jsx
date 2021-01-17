@@ -14,7 +14,7 @@ const ProductInfo = ({ selectedProduct, relatedProducts }) => {
               We aim to show you accurate product information. </span>
             <span>
               Manufacturers, suppliers and others provide what you see here, and have not verified it. </span>
-            <a className="button-wrapper" href="">See our disclaimer</a>
+            <a className="disclaimer-button-wrapper" href="">See our disclaimer</a>
           </p>
         </div>
         <p className="product-info-details">{selectedProduct.details}</p>
@@ -22,9 +22,7 @@ const ProductInfo = ({ selectedProduct, relatedProducts }) => {
         <ProductSpecs selectedProduct={selectedProduct} />
       </div>
     );
-  } else {
-    return null;
-  }
+  } else return null;
 };
 
 export default ProductInfo;
