@@ -20,6 +20,7 @@ const TileSlider = ({ relatedProducts }) => {
         {relatedProducts.map((product, index) => (
 
           <ProductTile
+            className="slide"
             index={index}
             product={product}
             dataId={product.id}

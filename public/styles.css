@@ -55,8 +55,7 @@ body {
 
 .image-slider-contain {
   grid-row: 1;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .slider {
@@ -69,7 +68,7 @@ body {
 }
 
 .slide {
-  width: 216px;
+  min-width: 13.5vw;
   height: 384px;
   flex-shrink: 0;
   margin: 0rem .5rem;
