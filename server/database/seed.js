@@ -6,6 +6,9 @@ const seedDatabase = () => {
   let firstEntry = [
     'Xbox One S',
     '["https://cdn.pocket-lint.com/r/s/1200x/assets/images/148296-games-review-xbox-one-s-all-digital-edition-product-shots-image1-xct4hs5njv.jpg", "https://compass-ssl.surface.com/assets/9e/cc/9eccdb3c-e965-4ab7-97d2-651c5f5a7fbe.jpg?n=Consoles-Hub_Content-Placement_Hub-SX_788x444.jpg"]',
+    '429.95',
+    4.2,
+    2041,
     '',
     [
       [ 'Brand', 'Xbox' ],
@@ -14,10 +17,10 @@ const seedDatabase = () => {
     ],
     'mouse'
   ];
+  firstEntry[6] = JSON.stringify(firstEntry[6]);
 
-  let firstQuery = 'insert into products (name, images, details, specifications, product_category) values (?, ?, ?, ?, ?)';
+  let firstQuery = 'insert into products (name, images, price, reviews_avg, reviews_total, details, specifications, product_category) values (?, ?, ?, ?, ?, ?, ?, ?)';
 
-  firstEntry[3] = JSON.stringify(firstEntry[3]);
   db.query(firstQuery, firstEntry, (error,results) => {
     error ? console.error(error) : console.log(results);
   });
@@ -43,6 +46,9 @@ const seedDatabase = () => {
     let product = [
       faker.commerce.productName(),
       productImages,
+      faker.commerce.price(),
+      (Math.random() * 5),
+      Math.floor(Math.random() * 30000),
       faker.lorem.paragraphs(),
       specifications,
       faker.commerce.product()
@@ -54,7 +60,7 @@ const seedDatabase = () => {
   console.log(initProducts.length);
 
   initProducts.forEach((product) => {
-    let queryString = 'insert into products (name, images, details, specifications, product_category) values (?, ?, ?, ?, ?)';
+    let queryString = 'insert into products (name, images, price, reviews_avg, reviews_total, details, specifications, product_category) values (?, ?, ?, ?, ?, ?, ?, ?)';
 
     db.query(queryString, product, (error, results) => {
       error ? console.error(error) : console.log(results);
