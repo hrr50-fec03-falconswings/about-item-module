@@ -5,7 +5,7 @@ const seedDatabase = () => {
 
   let firstEntry = [
     'Xbox One S',
-    'https://cdn.pocket-lint.com/r/s/1200x/assets/images/148296-games-review-xbox-one-s-all-digital-edition-product-shots-image1-xct4hs5njv.jpg',
+    '["https://cdn.pocket-lint.com/r/s/1200x/assets/images/148296-games-review-xbox-one-s-all-digital-edition-product-shots-image1-xct4hs5njv.jpg", "https://compass-ssl.surface.com/assets/9e/cc/9eccdb3c-e965-4ab7-97d2-651c5f5a7fbe.jpg?n=Consoles-Hub_Content-Placement_Hub-SX_788x444.jpg"]',
     '',
     [
       [ 'Brand', 'Xbox' ],
@@ -23,7 +23,7 @@ const seedDatabase = () => {
   });
 
   let initProducts = []
-  while (initProducts.length < 99) {
+  while (initProducts.length < 499) {
     let productImages = [];
     while (productImages.length < 10) {
       if (productImages.length % 3 == 0) {

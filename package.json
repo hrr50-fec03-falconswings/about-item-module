@@ -9,8 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:db": "mysql -u root < server/schema.sql",
-    "seed:db": "node server/database/seed.js",
+    "db:build": "mysql -u root < server/schema.sql",
+    "db:seed": "node server/database/seed.js",
     "build": "webpack --watch",
     "start": "nodemon server -w"
   },

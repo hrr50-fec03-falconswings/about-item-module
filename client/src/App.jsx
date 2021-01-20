@@ -16,6 +16,7 @@ class App extends React.Component {
       relatedProducts: []
     }
 
+    // service alias
     this.productServices = this.props.services.products;
   }
 
@@ -38,7 +39,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-render">
-        <TileSlider />
+        <TileSlider
+          selectedProduct={this.state.selectedProduct}
+          relatedProducts={this.state.relatedProducts} />
         <ProductInfo
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts} />
