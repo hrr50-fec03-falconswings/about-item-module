@@ -56,6 +56,9 @@ body {
 .tile-slider-container {
   grid-row: 1;
   overflow: hidden;
+  position: relative;
+
+  font-size: .875rem;
 }
 
 .image-slider-contain {
@@ -75,8 +78,7 @@ body {
 
 #slide-pagination-prev {
   position: absolute;
-  bottom: 65%;
-  left: 6%;
+  top: 50%;
 }
 
 .slide {
