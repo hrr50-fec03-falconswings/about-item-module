@@ -21,6 +21,7 @@
 
 html {
   font-size: 100%;
+  padding: 0rem 1.25rem;
 }
 
 body {
@@ -38,9 +39,7 @@ body {
 }
 
 .app-render {
-  padding: 0rem 1.25rem;
   margin-top: 1rem;
-
   display: grid;
 }
 
@@ -48,18 +47,45 @@ body {
   font-family: BogleBold;
 }
 
+.writing-black {
+  font-family: BogleBlack;
+}
 
-.image-slider-container {
-  padding: 0rem 1.25rem;
+/* * TileSlider Styling */
+
+.image-slider-contain {
   grid-row: 1;
-
-  border-top: 2px solid rgb(230, 228, 228);
-  border-bottom: 2px solid rgb(230, 228, 228);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-.image-slider-container h2 {
-  padding: 2rem 0rem;
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* overflow-x: auto; */
+  list-style-type: none;
+  scroll-behavior: smooth;
 }
+
+.slide {
+  width: 216px;
+  height: 384px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tile-image {
+  display: flex;
+  justify-content: center;
+}
+
+/* * ProductTile Styling */
+
+/* * ProductInfo Styling */
 
 .product-info-container {
   grid-row: 2;
@@ -75,19 +101,19 @@ body {
   color: rgb(40, 40, 40);
 }
 
-.product-info-container h2 {
+.product-info-container > h2 {
   margin-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.product-info-container h3 {
+.product-info-container > h3 {
   margin: .5rem 0rem;
   font-size: 1.25rem;
 }
 
-.product-info-container p {
+.product-info-container > p {
   font-size: .875rem;
-  letter-spacing: .015rem;
+  letter-spacing: 0rem;
 }
 
 .product-info-disclaimer {
@@ -100,7 +126,8 @@ body {
   margin-top: .875rem;
 }
 
-/* Specifications Table */
+/* * ProductSpecs Styling */
+
 .product-spec-table {
   width: 100%;
   margin-top: 1rem;

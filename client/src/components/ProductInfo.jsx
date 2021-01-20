@@ -18,7 +18,6 @@ const ProductInfo = ({ selectedProduct, relatedProducts }) => {
           </p>
         </div>
         <p className="product-info-details">{selectedProduct.details}</p>
-        <h3>Specifications</h3>
         <ProductSpecs selectedProduct={selectedProduct} />
       </div>
     );

@@ -6,11 +6,11 @@ const seedDatabase = () => {
   let firstEntry = [
     'Xbox One S',
     'https://cdn.pocket-lint.com/r/s/1200x/assets/images/148296-games-review-xbox-one-s-all-digital-edition-product-shots-image1-xct4hs5njv.jpg',
-    'Use with digital games only; console does not play physical discs. 4K at 120 FPS: Requires supported content and display; use on Xbox Series X as content becomes available. 8K: Requires supported content and display. Use on Xbox Series X as content becomes available. Xbox Game Pass: Membership sold separately. Game catalog varies over time and by region (xbox.com/gamepass). 120 FPS: Requires supported content and display; use on Xbox Series X & S as content becomes available. 4K streaming: with select apps, see xbox.com. Some apps require app provider-specific subscriptions and/or other requirements.',
+    '',
     [
-      [ 'Brand', 'Microsoft' ],
+      [ 'Brand', 'Xbox' ],
       [ 'Manufacturer Part Number', 'xb1' ],
-      [ 'Assembled Dimensions (L x W x H)', '5.9in x 2.6in x 10.8in' ]
+      [ 'Assembled Product Dimensions (L x W x H)', '14.25 x 11.50 x 5.00 Inches' ]
     ],
     'mouse'
   ];
@@ -65,3 +65,7 @@ const seedDatabase = () => {
 }
 
 seedDatabase();
+
+
+
+// Use with digital games only; console does not play physical discs. 4K at 120 FPS: Requires supported content and display; use on Xbox Series X as content becomes available. 8K: Requires supported content and display. Use on Xbox Series X as content becomes available. Xbox Game Pass: Membership sold separately. Game catalog varies over time and by region (xbox.com/gamepass). 120 FPS: Requires supported content and display; use on Xbox Series X & S as content becomes available. 4K streaming: with select apps, see xbox.com. Some apps require app provider-specific subscriptions and/or other requirements.

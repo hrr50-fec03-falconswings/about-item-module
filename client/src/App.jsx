@@ -2,8 +2,10 @@ import React from 'react';
 import faker from 'faker';
 
 // import child component(s)
+import TileSlider from './components/TileSlider';
+import ProductTile from './components/ProductTile';
 import ProductInfo from './components/ProductInfo';
-import ImageSlider from './components/ImageSlider';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // window.location.pathName
     this.productServices.getProduct(1, (results) => {
       console.log(results);
       this.productServices.getProductCategory(results.product_category, (results) => {
@@ -35,7 +38,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-render">
-        <ImageSlider />
+        <TileSlider />
         <ProductInfo
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts} />
