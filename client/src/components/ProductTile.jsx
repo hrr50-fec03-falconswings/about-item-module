@@ -1,6 +1,7 @@
 import React from 'react';
 import faker from 'faker';
 
+import photo from '../../../public/assets/images/test.jpg';
 
 // import custom svg icons
 import emptyStar from '../../../public/assets/icons/empty_star.svg';
@@ -13,6 +14,7 @@ const ProductTile = ({ index }) => {
       <div className="tile-flag">Rollback</div>
       <div className="tile-image">
         <img src="http://placeimg.com/168/168/any" alt=""/>
+        {/* <img style={{maxHeight: '168px', maxWidth: '168px'}} src={photo} alt=""/> */}
       </div>
       <div className="tile-content">
         <div className="tile-content-label">{"Sponsored"}</div>

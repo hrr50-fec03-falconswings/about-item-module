@@ -53,9 +53,14 @@ body {
 
 /* * TileSlider Styling */
 
-.image-slider-contain {
+.tile-slider-container {
   grid-row: 1;
   overflow: hidden;
+}
+
+.image-slider-contain {
+  grid-row: 2;
+  /* overflow: hidden; */
 }
 
 .slider {
@@ -63,24 +68,31 @@ body {
   height: 100%;
   display: flex;
   overflow-x: hidden;
+  overflow-y: hidden;
   list-style-type: none;
   scroll-behavior: smooth;
 }
 
+#slide-pagination-prev {
+  position: absolute;
+  bottom: 65%;
+  left: 6%;
+}
+
 .slide {
-  min-width: 13vw;
+  min-width: 14vw;
   height: 384px;
   flex-shrink: 0;
   margin: 0rem .5rem;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .tile-image {
-  display: flex;
-  justify-content: center;
+  min-height: 55%;
+  padding: 1.75rem 1.5rem 1.5rem;
 }
 
 /* * ProductTile Styling */
@@ -88,7 +100,7 @@ body {
 /* * ProductInfo Styling */
 
 .product-info-container {
-  grid-row: 2;
+  grid-row: 3;
   width: 75%;
   margin-right: auto;
   padding: 1.5rem 0rem;

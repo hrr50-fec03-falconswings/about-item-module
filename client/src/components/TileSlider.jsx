@@ -10,15 +10,15 @@ const TileSlider = ({ relatedProducts }) => {
 
   console.log(pageCount);
   return (
-    <div className="image-slider-contain">
-      <div className="image-slider-header">
+    <div className="tile-slider-container">
+                    <div className="image-slider-header">
         <h2 className="slider-header">Customers also bought these products</h2>
-      </div>
-      <ul className="slider">
         <a id="slide-pagination-prev" href="#slide-1">1</a>
         <a id="slide-pagination-next" href="#slide-12">2</a>
+      </div>
+    <div className="image-slider-contain">
+      <ul className="slider">
         {relatedProducts.map((product, index) => (
-
           <ProductTile
             className="slide"
             index={index}
@@ -28,6 +28,8 @@ const TileSlider = ({ relatedProducts }) => {
           />
         ))}
       </ul>
+      {}
+    </div>
     </div>
   );
 };
