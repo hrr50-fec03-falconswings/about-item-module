@@ -5,14 +5,14 @@ import emptyStar from '../../../public/assets/icons/empty_star.svg';
 import halfStar from '../../../public/assets/icons/half_star.svg';
 import fullStar from '../../../public/assets/icons/full_star.svg';
 
-const ProductReviews = ({ reviews }) => {
+const ProductReviews = ({ reviewAvg, reviewTotal }) => {
   const initStars = () => {
     let totalStars = [];
-    for (let i = Math.floor(reviews); i > 0; i--) {
+    for (let i = Math.floor(reviewAvg); i > 0; i--) {
       totalStars.push(1);
     }
-    // if (1 - Math.abs(reviews % 2) < .1) console.log(reviews);
-    if (reviews % 2 !== 0) totalStars.push(.5);
+    // if (1 - Math.abs(reviewAvg % 2) < .1) console.log(reviewAvg);
+    if (reviewAvg % 2 !== 0) totalStars.push(.5);
     while (totalStars.length < 5) {
       totalStars.push(0);
     }
@@ -37,6 +37,9 @@ const ProductReviews = ({ reviews }) => {
           )
         }
       })}
+      <div className="tile-content-reviews-total">
+        <a href="">{reviewTotal}</a>
+      </div>
     </div>
   );
 };
