@@ -59,6 +59,11 @@ body {
   position: relative;
 
   font-size: .875rem;
+  line-height: 1.5rem;
+}
+
+.image-slider-header {
+  padding: 2rem 0rem;
 }
 
 .image-slider-contain {
@@ -83,15 +88,21 @@ body {
 
 .slide-pagination-bottom {
   grid-row: 3;
+  min-height: 58px;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(230, 231, 232);
 
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .pagination-circle-true {
   color: black;
   margin: 0rem .2rem;
   max-height: 7px;
+  pointer-events: none;
 }
 
 .pagination-circle-false {
@@ -103,7 +114,7 @@ body {
 
 .slide {
   max-width: 211px;
-  height: 384px;
+  height: 385px;
   flex-shrink: 0;
   margin: 0rem .5rem;
 
