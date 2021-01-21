@@ -3,6 +3,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
+import pageLeft from '../../../public/assets/icons/page_left.svg';
+import pageRight from '../../../public/assets/icons/page_right.svg';
+
 // import child component(s)
 import ProductTile from './ProductTile';
 
@@ -38,18 +41,10 @@ const TileSlider = ({ relatedProducts, tileSlidePage, setSlidePage }) => {
     setSlidePage(pageIndex);
   }
 
-
-
   return (
     <div className="tile-slider-container">
       <div className="image-slider-header">
         <h2 className="slider-header">Customers also bought these products</h2>
-        <a id="slide-pagination-prev" href="#slide-1">
-          1
-        </a>
-        <a id="slide-pagination-next" href="#slide-12">
-          2
-        </a>
       </div>
       <div className="image-slider-contain">
         <ul className="slider">
@@ -59,11 +54,24 @@ const TileSlider = ({ relatedProducts, tileSlidePage, setSlidePage }) => {
               className="slide"
               index={index}
               product={product}
-              // dataId={product.id}
             />
           ))}
         </ul>
         {}
+      </div>
+      <div className="slide-pagination-left">
+        <img
+          className={'hidden-' + (tileSlidePage == 1)}
+          src={pageLeft}
+          alt="next page forward button"
+          onClick={(e) => {pageSelect(e, (tileSlidePage - 1), pages.length)}}  />
+      </div>
+      <div className="slide-pagination-right">
+        <img
+          className={'hidden-' + (tileSlidePage == pages.length)}
+          src={pageRight}
+          alt="next page forward button"
+          onClick={(e) => {pageSelect(e, (tileSlidePage + 1), pages.length)}}  />
       </div>
       <div className="slide-pagination-bottom">
         {pages.map((page, index, pages) => (
