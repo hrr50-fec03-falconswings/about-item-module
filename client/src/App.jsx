@@ -13,7 +13,8 @@ class App extends React.Component {
 
     this.state = {
       selectedProduct: {},
-      relatedProducts: []
+      relatedProducts: [],
+      tileSlidePage: 0
     }
 
     // service alias
@@ -30,9 +31,16 @@ class App extends React.Component {
         console.log(related)
         this.setState({
           selectedProduct: selected[0],
-          relatedProducts: related
+          relatedProducts: related,
+          tileSlidePage: 1
         });
       })
+    });
+  }
+
+  setSlidePage(val) {
+    this.setState({
+      tileSlidePage: val
     });
   }
 
@@ -41,7 +49,9 @@ class App extends React.Component {
       <div className="app-render">
         <TileSlider
           selectedProduct={this.state.selectedProduct}
-          relatedProducts={this.state.relatedProducts} />
+          relatedProducts={this.state.relatedProducts}
+          tileSlidePage={this.state.tileSlidePage}
+          setSlidePage={this.setSlidePage.bind(this)} />
         <ProductInfo
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts} />

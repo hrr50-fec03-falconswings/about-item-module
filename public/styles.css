@@ -88,6 +88,14 @@ body {
   justify-content: center;
 }
 
+.pagination-circle-true {
+  color: black;
+}
+
+.pagination-circle-false {
+  color: lightgray;
+}
+
 .slide {
   min-width: 14vw;
   height: 384px;
