@@ -36,12 +36,30 @@ const seedDatabase = () => {
     }
     productImages = JSON.stringify(productImages);
 
-    let specifications = JSON.stringify([
-      faker.commerce.product(),
-      faker.commerce.productAdjective(),
-      faker.lorem.paragraph()
-    ]);
+    let possibleSpecItems = [
+      'Brand',
+      'Manufacturer Part Number',
+      'Assembed Product Dimensions (L x W x H)',
+      'Color',
+      'Compatible Devices',
+      'Features',
+      'Video Game Platform',
+      'Manufacturer',
+      'Contains Batteries',
+      'Assembled Product Weight',
+      'Release Date'
+    ];
 
+    let rand = Math.floor(Math.random() * 12);
+    if (rand < 3) rand = 3;
+    let specifications = [];
+    for (let i = rand; i > 0; i--) {
+      let index = Math.floor(Math.random() * 12);
+      let entry = [possibleSpecItems[index], faker.commerce.productAdjective()];
+      specifications.push(entry);
+    }
+
+    specifications = JSON.stringify(specifications);
 
     let product = [
       faker.commerce.productName(),
