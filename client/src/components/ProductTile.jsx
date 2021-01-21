@@ -11,8 +11,8 @@ const ProductTile = ({ product, index }) => {
     <li className="slide" id={'slide-' + (index + 1)}>
       <div className="tile-flag">Rollback</div>
       <div className="tile-image">
-        <img src="http://placeimg.com/168/168/any" alt=""/>
-        {/* <img style={{maxHeight: '168px', maxWidth: '168px'}} src={photo} alt=""/> */}
+        {/* <img src="http://placeimg.com/168/168/any" alt=""/> */}
+        <img style={{maxHeight: '168px', maxWidth: '168px'}} src={photo} alt=""/>
       </div>
       <div className="tile-content">
         <div className="tile-content-label">{"Sponsored"}</div>

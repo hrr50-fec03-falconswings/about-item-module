@@ -90,21 +90,25 @@ body {
 
 .pagination-circle-true {
   color: black;
+  margin: 0rem .2rem;
+  max-height: 7px;
 }
 
 .pagination-circle-false {
-  color: lightgray;
+  color: rgb(155, 155, 155);
+  margin: 0rem .2rem;
+  max-height: 7px;
+  cursor: pointer;
 }
 
 .slide {
-  min-width: 14vw;
+  max-width: 210px;
   height: 384px;
   flex-shrink: 0;
   margin: 0rem .5rem;
 
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 
 .tile-image {

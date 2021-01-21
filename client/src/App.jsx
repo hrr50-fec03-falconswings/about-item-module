@@ -48,6 +48,7 @@ class App extends React.Component {
     return (
       <div className="app-render">
         <TileSlider
+          className="tile-slider-container"
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts}
           tileSlidePage={this.state.tileSlidePage}
