@@ -81,6 +81,13 @@ body {
   top: 50%;
 }
 
+.slide-pagination-bottom {
+  grid-row: 3;
+
+  display: flex;
+  justify-content: center;
+}
+
 .slide {
   min-width: 14vw;
   height: 384px;
@@ -102,7 +109,7 @@ body {
 /* * ProductInfo Styling */
 
 .product-info-container {
-  grid-row: 3;
+  grid-row: 4;
   width: 75%;
   margin-right: auto;
   padding: 1.5rem 0rem;

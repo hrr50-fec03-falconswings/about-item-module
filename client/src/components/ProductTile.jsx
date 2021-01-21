@@ -1,14 +1,12 @@
 import React from 'react';
 import faker from 'faker';
 
+import ProductReviews from './ProductReviews';
+
 import photo from '../../../public/assets/images/test.jpg';
 
-// import custom svg icons
-import emptyStar from '../../../public/assets/icons/empty_star.svg';
-import halfStar from '../../../public/assets/icons/half_star.svg';
-import fullStar from '../../../public/assets/icons/full_star.svg';
 
-const ProductTile = ({ index }) => {
+const ProductTile = ({ product, index }) => {
   return (
     <li className="slide" id={'slide-' + (index + 1)}>
       <div className="tile-flag">Rollback</div>
@@ -22,16 +20,10 @@ const ProductTile = ({ index }) => {
         <div className="tile-content-title">
           <p>hahah oh yea i ffasdfsjfaskld</p>
         </div>
-        <div className="tile-content-reviews">
-          <img src={fullStar} alt="" style={{height: '11px'}} />
-          <img src={fullStar} alt="" style={{height: '11px'}} />
-          <img src={fullStar} alt="" style={{height: '11px'}} />
-          <img src={halfStar} alt="" style={{height: '11px'}} />
-          <img src={emptyStar} alt="" style={{height: '11px'}} />
-        </div>
+        <ProductReviews reviews={product.reviews_avg} />
         <br/>
         <div className="tile-price">
-          <p className="writing-black">{"$" + faker.commerce.price()}</p>
+          <p className="writing-black">{"$" + product.price}</p>
         </div>
       </div>
     </li>

@@ -5,10 +5,9 @@ import emptyStar from '../../../public/assets/icons/empty_star.svg';
 import halfStar from '../../../public/assets/icons/half_star.svg';
 import fullStar from '../../../public/assets/icons/full_star.svg';
 
-const ProductReviews = ({ product }) => {
+const ProductReviews = ({ reviews }) => {
   const initStars = () => {
     let totalStars = [];
-    let reviews = product.reviews_avg;
     for (let i = Math.floor(reviews); i > 0; i--) {
       totalStars.push(1);
     }
