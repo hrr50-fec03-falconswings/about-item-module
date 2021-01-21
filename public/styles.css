@@ -102,7 +102,7 @@ body {
 }
 
 .slide {
-  max-width: 210px;
+  max-width: 211px;
   height: 384px;
   flex-shrink: 0;
   margin: 0rem .5rem;
