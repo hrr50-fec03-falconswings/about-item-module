@@ -1,0 +1,62 @@
+.slide {
+  max-width: 211px;
+  height: 385px;
+  flex-shrink: 0;
+  margin: 0rem .5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-image {
+  /* min-height: 55%; */
+  min-height: 220.656px;
+  min-width: 216.656px;
+  padding: 1.75rem 1.5rem 1.5rem;
+
+  object-fit: contain;
+  position: relative;
+}
+
+/* * ProductTile Styling */
+
+#rollback-flag {
+  padding: 0rem .5rem;
+  color: rgb(222, 28, 36);
+  background-color: rgb(253, 244, 244);
+}
+
+#reduced-flag, #lowstock-flag {
+  padding: 0rem .5rem;
+  color: rgb(0, 71, 158);
+  background-color: rgb(230, 241, 252);
+}
+
+.tile-flag {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  display: inline-flex;
+  line-height: 1.25rem;
+  font-size: .75rem;
+}
+
+.tile-content-label {
+  color: #949499;
+}
+
+.tile-content-reviews {
+  display: flex;
+  align-items: center;
+}
+
+.tile-content-reviews-total > a {
+  margin-left: 1rem;
+  font-size: .75rem;
+  color: black;
+}
+
+.tile-price > p {
+  font-size: 1rem;
+}
