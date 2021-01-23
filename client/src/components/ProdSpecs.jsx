@@ -1,9 +1,9 @@
 import React from 'react';
 
 // import css module
-import s from '../styles/ProductSpecs.css';
+import s from '../styles/ProdSpecs.css';
 
-const ProductSpecs = ({ selectedProduct }) => {
+const ProdSpecs = ({ selectedProduct }) => {
   if (selectedProduct.specifications !== undefined) {
     return (
       <div className="product-spec-container">
@@ -27,4 +27,4 @@ const ProductSpecs = ({ selectedProduct }) => {
   } else return null;
 };
 
-export default ProductSpecs;
+export default ProdSpecs;

@@ -1,12 +1,12 @@
 import React from 'react';
 
 // import css module
-import s from '../styles/ProductInfo.css';
+import s from '../styles/ProdInfo.css';
 
 // import child component(s)
 import ProductSpecs from './ProductSpecs';
 
-const ProductInfo = ({ selectedProduct, relatedProducts }) => {
+const ProdInfo = ({ selectedProduct, relatedProducts }) => {
   if (selectedProduct != undefined) {
     return(
       <div className="product-info-container">
@@ -27,4 +27,4 @@ const ProductInfo = ({ selectedProduct, relatedProducts }) => {
   } else return null;
 };
 
-export default ProductInfo;
+export default ProdInfo;

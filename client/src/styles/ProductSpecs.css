@@ -1,0 +1,13 @@
+.product-spec-table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.product-spec-row-0 {
+  background-color: rgba(148, 148, 153, 0.1);
+}
+
+.product-spec-entry {
+  font-size: .875rem;
+  padding: 1rem;
+}

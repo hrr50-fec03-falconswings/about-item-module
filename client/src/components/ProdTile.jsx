@@ -2,13 +2,13 @@ import React from 'react';
 import faker from 'faker';
 
 // import css module
-import s from '../styles/ProductTile.css';
+import s from '../styles/ProdTile.css';
 
 // import child component(s)
 import ProductReviews from './ProductReviews';
 
 
-const ProductTile = ({ product, index }) => {
+const ProdTile = ({ product, index }) => {
   return (
     <li className="slide" id={'slide-' + (index + 1)}>
       <div className="tile-image">
@@ -40,4 +40,4 @@ const ProductTile = ({ product, index }) => {
   );
 };
 
-export default ProductTile;
+export default ProdTile;

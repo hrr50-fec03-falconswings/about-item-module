@@ -1,14 +1,14 @@
 import React from 'react';
 
 // import css module
-import s from '../styles/ProductReviews.css';
+import s from '../styles/ReviewStars.css';
 
 // import custom svg icons
 import emptyStar from '../assets/icons/empty_star.svg';
 import halfStar from '../assets/icons/half_star.svg';
 import fullStar from '../assets/icons/full_star.svg';
 
-const ProductReviews = ({ reviewAvg, reviewTotal }) => {
+const ReviewStars = ({ reviewAvg, reviewTotal }) => {
   const initStars = () => {
     let totalStars = [];
     for (let i = Math.floor(reviewAvg); i > 0; i--) {
@@ -46,4 +46,4 @@ const ProductReviews = ({ reviewAvg, reviewTotal }) => {
   );
 };
 
-export default ProductReviews;
+export default ReviewStars;

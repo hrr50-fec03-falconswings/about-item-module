@@ -1,0 +1,38 @@
+.product-info-container {
+  grid-row: 4;
+  width: 75%;
+  margin-right: auto;
+  padding: 1.5rem 0rem;
+  padding-right: .5rem;
+}
+
+.disclaimer-button-wrapper {
+  /* forces the a tag to stay on one line */
+  white-space: nowrap;
+  color: rgb(40, 40, 40);
+}
+
+.product-info-container > h2 {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.product-info-container > h3 {
+  margin: .5rem 0rem;
+  font-size: 1.25rem;
+}
+
+.product-info-container > p {
+  font-size: .875rem;
+  letter-spacing: 0rem;
+}
+
+.product-info-disclaimer {
+  margin-top: .5rem;
+  padding-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.product-info-details {
+  margin-top: .875rem;
+}

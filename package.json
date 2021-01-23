@@ -8,11 +8,11 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "db:build": "mysql -u root < server/schema.sql",
     "db:seed": "node server/database/seed.js",
     "build": "webpack --watch",
-    "start": "nodemon server -w"
+    "start": "nodemon server -w",
+    "test": "jest"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -29,11 +29,22 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "file-loader": "^6.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.7",
+    "style-loader": "^2.0.0",
     "webpack": "^5.14.0",
     "webpack-cli": "^4.3.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }

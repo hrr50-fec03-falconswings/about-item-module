@@ -27,6 +27,14 @@ const seedDatabase = () => {
 
   let initProducts = []
   while (initProducts.length < 499) {
+
+    // * CREATE IMAGES ARRAY FOR PRODUCT
+
+
+
+    // https://hrr50-fec-images.s3-us-west-1.amazonaws.com/images/img_69.jpeg
+
+
     let productImages = [];
     while (productImages.length < 10) {
       if (productImages.length % 3 == 0) {

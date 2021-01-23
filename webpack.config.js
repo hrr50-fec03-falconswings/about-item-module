@@ -15,9 +15,13 @@ const config = {
         exclude: /node_modules/
       },
       {
-        test: /\.(jpg|svg)$/,
+        test: /\.(jpg|jpeg|png|svg|otf)$/,
         use: 'file-loader'
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
   },
   resolve: {
