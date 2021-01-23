@@ -10,7 +10,7 @@ import ProductReviews from './ProductReviews';
 
 const ProdTile = ({ product, index }) => {
   return (
-    <li className="slide" id={'slide-' + (index + 1)}>
+    <div className="tile-slide">
       <div className="tile-image">
         <div className="tile-flag">
           <span id="reduced-flag">Reduced Price</span>
@@ -36,7 +36,7 @@ const ProdTile = ({ product, index }) => {
           <p className="writing-black">{"$" + product.price}</p>
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 

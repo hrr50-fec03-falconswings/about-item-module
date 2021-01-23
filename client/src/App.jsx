@@ -5,6 +5,7 @@ import faker from 'faker';
 import s from './styles/App.css';
 
 // import child component(s)
+import Slider from './components/Slider';
 import TileSlider from './components/TileSlider';
 import ProductTile from './components/ProductTile';
 import ProductInfo from './components/ProductInfo';
@@ -21,16 +22,13 @@ class App extends React.Component {
     }
 
     // service alias
-    this.productServices = this.props.services.products;
+    this.productService = this.props.services.products;
   }
 
   componentDidMount() {
-    // reset window hash when the app loads
-    window.location.hash = '';
-    console.log(window.location)
-    this.productServices.getProduct(1, (results) => {
+    this.productService.getProduct(1, (results) => {
       console.log(results);
-      this.productServices.getProductCategory(results.product_category, (results) => {
+      this.productService.getProductCategory(results.product_category, (results) => {
         let selected = results.splice(0, 1);
         let related = [...results];
         console.log(related)
@@ -52,12 +50,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-render">
-        <TileSlider
+        <Slider
           className="tile-slider-container"
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts}
           currentPage={this.state.currentPage}
           setCurrentPage={this.setCurrentPage.bind(this)} />
+        {/* <TileSlider
+          className="tile-slider-container"
+          selectedProduct={this.state.selectedProduct}
+          relatedProducts={this.state.relatedProducts}
+          currentPage={this.state.currentPage}
+          setCurrentPage={this.setCurrentPage.bind(this)} /> */}
         <ProductInfo
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts} />
