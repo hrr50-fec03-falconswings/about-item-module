@@ -23,11 +23,11 @@ const Slider = ({ relatedProducts, currentPage, setCurrentPage }) => {
 
   const pageScroll = (event, direction) => {
     const slider = document.getElementById('tile-slider');
-    const offset = slider.scrollWidth % 1360;
-    console.log(slider.scrollWidth, offset)
+    let offset = slider.scrollWidth % 1360;
+    if (offset < 100) offset = 1360;
     let nextPage;
 
-    console.log(currentPage, pages.length, direction)
+    console.log(offset);
 
     if (direction == 'left') {
       nextPage = currentPage - 1;
@@ -62,10 +62,8 @@ const Slider = ({ relatedProducts, currentPage, setCurrentPage }) => {
   setCurrentPage(nextPage);
 }
 
-const pageSelect = (event, pageIndex, direction) => {
-  let url = 'http://localhost:3000/#slide-';
+const pageSelect = (event, pageIndex) => {
   const slider = document.getElementById('tile-slider')
-  console.log(slider.scrollWidth)
 
     console.log(pageIndex, pages.length)
     if (pageIndex === pages.length) {
@@ -76,8 +74,8 @@ const pageSelect = (event, pageIndex, direction) => {
         behavior: 'smooth'
       })
     }
-    slider.scrollBy({
-      left: 1360,
+    slider.scrollTo({
+      left: 1360 * (pageIndex - 1),
       behavior: 'smooth'
     })
 
