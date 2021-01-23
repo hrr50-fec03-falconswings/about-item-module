@@ -23,6 +23,8 @@ const Slider = ({ relatedProducts, currentPage, setCurrentPage }) => {
 
   const pageScroll = (event, direction) => {
     const slider = document.getElementById('tile-slider');
+    const offset = slider.scrollWidth % 1360;
+    console.log(slider.scrollWidth, offset)
     let nextPage;
 
     console.log(currentPage, pages.length, direction)
@@ -36,8 +38,8 @@ const Slider = ({ relatedProducts, currentPage, setCurrentPage }) => {
         })
       } else {
         console.log('here')
-        slider.scrollTo({
-          left: 0,
+        slider.scrollBy({
+          left: -offset,
           behavior: 'smooth'
         })
       }
