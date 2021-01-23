@@ -28,7 +28,7 @@
 
 ### Next we'll launch our client and server apps in two separate terminals:
 ### $ npm run build (first running terminal)
-### $ npm run start (second running terminal)
+### $ npm start (second running terminal)
 
 ## Requirements
 
