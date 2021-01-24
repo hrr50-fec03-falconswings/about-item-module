@@ -14,10 +14,11 @@
 #tile-slider {
   grid-row: 2;
 
+  height: 384.66px;
   width: 100%;
   display: flex;
   overflow-x: hidden;
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
   scroll-behavior: smooth;
 }
 

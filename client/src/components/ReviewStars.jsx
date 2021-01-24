@@ -35,15 +35,15 @@ const ReviewStars = ({ reviewAvg, reviewTotal }) => {
       {initStars().map((star, index) => {
         if (star === 1) {
           return (
-            <img className="review-star" src={fullStar} alt="a full star" style={{height: '11px'}} key={index} />
+            <img className="review-star" src={fullStar} alt="a full star" key={index} />
           )
         } else if (star === .5) {
           return (
-            <img className="review-star" src={halfStar} alt="a half-full star" style={{height: '11px'}} key={index} />
+            <img className="review-star" src={halfStar} alt="a half-full star" key={index} />
           )
         } else {
           return (
-            <img className="review-star" src={emptyStar} alt="an empty star" style={{height: '11px'}} key={index} />
+            <img className="review-star" src={emptyStar} alt="an empty star" key={index} />
           )
         }
       })}

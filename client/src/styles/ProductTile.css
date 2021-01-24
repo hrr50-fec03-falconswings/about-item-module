@@ -15,6 +15,11 @@
   padding: 1.75rem 1.3rem 1.3rem;
 }
 
+.product-image {
+  max-height: 168.66px;
+  max-width: 168.66px;
+}
+
 .tile-flag {
   position: absolute;
   top: 0px;
@@ -24,18 +29,22 @@
   font-size: .75rem;
 }
 
-#rollback-flag {
+.rollback-flag {
   padding: 0rem .5rem;
   color: rgb(222, 28, 36);
   background-color: rgb(253, 244, 244);
 }
 
-#reduced-flag, #lowstock-flag {
+.reduced-flag, .lowstock-flag, .new-flag {
   padding: 0rem .5rem;
   color: rgb(0, 71, 158);
   background-color: rgb(230, 241, 252);
 }
 
+.tile-content-title {
+  height: 3rem;
+  overflow: hidden;
+}
 
 .tile-content-label {
   color: #949499;
@@ -52,6 +61,14 @@
   color: black;
 }
 
-.tile-price > p {
+.price-black {
+  font-family: BogleBlack;
   font-size: 1rem;
+}
+
+
+.price-grey {
+  margin-left: 5px;
+  font-size: .875rem;
+  color: #6d6e71;
 }

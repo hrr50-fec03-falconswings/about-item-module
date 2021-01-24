@@ -2,12 +2,12 @@ import React from 'react';
 import faker from 'faker';
 
 // import stylesheet
-import s from './styles/App.css';
+import s from '../styles/App.css';
 
 // import child component(s)
-import TileSlider from './components/TileSlider';
-import ProductTile from './components/ProductTile';
-import ProductInfo from './components/ProductInfo';
+import TileSlider from './TileSlider';
+import ProductTile from './ProductTile';
+import ProductInfo from './ProductInfo';
 
 
 class App extends React.Component {
@@ -49,12 +49,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-render">
-        {/* <Slider
-          className="tile-slider-container"
-          selectedProduct={this.state.selectedProduct}
-          relatedProducts={this.state.relatedProducts}
-          currentPage={this.state.currentPage}
-          setCurrentPage={this.setCurrentPage.bind(this)} /> */}
         <TileSlider
           className="tile-slider-container"
           selectedProduct={this.state.selectedProduct}
