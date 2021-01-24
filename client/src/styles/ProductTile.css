@@ -1,35 +1,23 @@
-.slide {
+.tile-slide {
   max-width: 211px;
-  height: 385px;
+  height: 384.66px;
   flex-shrink: 0;
   margin: 0rem .5rem;
 
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
 .tile-image {
-  /* min-height: 55%; */
-  min-height: 220.656px;
-  min-width: 216.656px;
-  padding: 1.75rem 1.5rem 1.5rem;
-
-  object-fit: contain;
-  position: relative;
+  max-height: 220.656px;
+  max-width: 216.656px;
+  padding: 1.75rem 1.3rem 1.3rem;
 }
 
-/* * ProductTile Styling */
-
-#rollback-flag {
-  padding: 0rem .5rem;
-  color: rgb(222, 28, 36);
-  background-color: rgb(253, 244, 244);
-}
-
-#reduced-flag, #lowstock-flag {
-  padding: 0rem .5rem;
-  color: rgb(0, 71, 158);
-  background-color: rgb(230, 241, 252);
+.product-image {
+  max-height: 168.66px;
+  max-width: 168.66px;
 }
 
 .tile-flag {
@@ -37,9 +25,25 @@
   top: 0px;
   left: 0px;
 
-  display: inline-flex;
   line-height: 1.25rem;
   font-size: .75rem;
+}
+
+.rollback-flag {
+  padding: 0rem .5rem;
+  color: rgb(222, 28, 36);
+  background-color: rgb(253, 244, 244);
+}
+
+.reduced-flag, .lowstock-flag, .newitem-flag {
+  padding: 0rem .5rem;
+  color: rgb(0, 71, 158);
+  background-color: rgb(230, 241, 252);
+}
+
+.tile-content-title {
+  height: 3rem;
+  overflow: hidden;
 }
 
 .tile-content-label {
@@ -57,6 +61,14 @@
   color: black;
 }
 
-.tile-price > p {
+.price-black {
+  font-family: BogleBlack;
   font-size: 1rem;
+}
+
+
+.price-grey {
+  margin-left: 5px;
+  font-size: .875rem;
+  color: #6d6e71;
 }

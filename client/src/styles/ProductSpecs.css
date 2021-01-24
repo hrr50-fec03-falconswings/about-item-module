@@ -1,3 +1,7 @@
+.product-spec-container > h3 {
+  margin: 1rem 0rem;
+}
+
 .product-spec-table {
   width: 100%;
   margin-top: 1rem;
