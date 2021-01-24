@@ -16,8 +16,8 @@ const ProdTile = ({ product, index }) => {
           <span id="reduced-flag">Reduced Price</span>
           {/* <span id={product.special + '-flag'}>{product.special}</span> */}
         </div>
-        {/* <img src={"https://hrr50-fec-images.s3-us-west-1.amazonaws.com/images/img_" + (index + 1) + ".jpeg"} alt="" style={{maxHeight: '168.66px', maxWidth: '168.66px'}} /> */}
-        <img src="http://placeimg.com/640/480/videogames" alt="" style={{maxHeight: '168.66px', maxWidth: '168.66px'}} />
+        <img src={"https://hrr50-fec-images.s3-us-west-1.amazonaws.com/images/img_" + (index + 1) + ".jpeg"} alt="" style={{maxHeight: '168.66px', maxWidth: '168.66px'}} />
+        {/* <img src="http://placeimg.com/640/480/videogames" alt="" style={{maxHeight: '168.66px', maxWidth: '168.66px'}} /> */}
         {/* <img style={{maxHeight: '168.66px', maxWidth: '168.66px'}} src={photo} alt=""/> */}
         {/* <img style={{maxHeight: '168.66px', maxWidth: '168.66px'}} src={product.images[0]} alt=""/> */}
       </div>

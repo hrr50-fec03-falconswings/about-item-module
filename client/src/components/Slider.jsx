@@ -16,6 +16,7 @@ import ProdTile from './ProdTile';
 
 const Slider = ({ relatedProducts, currentPage, setCurrentPage }) => {
 
+  let nextPage;
   let products = [...relatedProducts];
   const pages = [].concat.apply([], products.map((product, index) =>
     index % 6 ? [] : [products.slice(index, index + 6)]
@@ -25,9 +26,6 @@ const Slider = ({ relatedProducts, currentPage, setCurrentPage }) => {
     const slider = document.getElementById('tile-slider');
     let offset = slider.scrollWidth % 1360;
     if (offset < 100) offset = 1360;
-    let nextPage;
-
-    console.log(offset);
 
     if (direction == 'left') {
       nextPage = currentPage - 1;
@@ -64,23 +62,13 @@ const Slider = ({ relatedProducts, currentPage, setCurrentPage }) => {
 
 const pageSelect = (event, pageIndex) => {
   const slider = document.getElementById('tile-slider')
+  slider.scrollTo({
+    left: 1360 * (pageIndex - 1),
+    behavior: 'smooth'
+  })
 
-    console.log(pageIndex, pages.length)
-    if (pageIndex === pages.length) {
-      let val = slider.scrollWidth % 1360;
-      console.log(val);
-      slider.scrollBy({
-        right: val,
-        behavior: 'smooth'
-      })
-    }
-    slider.scrollTo({
-      left: 1360 * (pageIndex - 1),
-      behavior: 'smooth'
-    })
-
-    setCurrentPage(pageIndex);
-  }
+  setCurrentPage(pageIndex);
+}
 
   return (
     <div id="tile-slider-container">
