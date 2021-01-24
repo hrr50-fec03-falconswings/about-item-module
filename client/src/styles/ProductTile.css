@@ -35,7 +35,7 @@
   background-color: rgb(253, 244, 244);
 }
 
-.reduced-flag, .lowstock-flag, .new-flag {
+.reduced-flag, .lowstock-flag, .newitem-flag {
   padding: 0rem .5rem;
   color: rgb(0, 71, 158);
   background-color: rgb(230, 241, 252);
