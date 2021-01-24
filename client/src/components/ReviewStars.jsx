@@ -14,7 +14,15 @@ const ReviewStars = ({ reviewAvg, reviewTotal }) => {
     for (let i = Math.floor(reviewAvg); i > 0; i--) {
       totalStars.push(1);
     }
-    if (reviewAvg % 2 !== 0) totalStars.push(.5);
+    if (reviewAvg % 2 !== 0) {
+      if (reviewAvg % 1 < 0.05) {
+        totalStars.push(0)
+      } else if (reviewAvg % 1 > 0.98) {
+        totalStars.push(1)
+      } else {
+        totalStars.push(.5);
+      }
+    }
     while (totalStars.length < 5) {
       totalStars.push(0);
     }

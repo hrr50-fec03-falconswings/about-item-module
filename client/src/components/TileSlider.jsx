@@ -15,67 +15,85 @@ import pageRight from '../assets/icons/page_right.svg';
 import ProductTile from './ProductTile';
 
 const TileSlider = ({ relatedProducts, currentPage, setCurrentPage }) => {
+
+  let nextPage;
   let products = [...relatedProducts];
   const pages = [].concat.apply([], products.map((product, index) =>
     index % 6 ? [] : [products.slice(index, index + 6)]
   ));
 
-  const pageSelect = (event, pageIndex, pageCount) => {
-    let url = 'http://localhost:3000/#slide-';
+  const pageScroll = (event, direction) => {
+    const slider = document.getElementById('tile-slider');
+    let offset = slider.scrollWidth % 1360;
+    if (offset < 100) offset = 1360;
 
-    if (window.location.hash.length) {
-      let currentHash = Math.abs(parseInt(window.location.href.slice(-2)));
-
-      if (currentHash < (pageIndex * 6)) {
-        if (pageIndex === pageCount) {
-          window.location.href = url + relatedProducts.length;
-        } else {
-          window.location.href = url + (pageIndex * 6);
-        }
+    if (direction == 'left') {
+      nextPage = currentPage - 1;
+      if (currentPage !== pages.length) {
+        slider.scrollBy({
+          left: -1360,
+          behavior: 'smooth'
+        })
       } else {
-        window.location.href = url + (((pageIndex * 6) + 1) - 6);
+        console.log('here')
+        slider.scrollBy({
+          left: -offset,
+          behavior: 'smooth'
+        })
       }
+
+    } else { // direction == 'right'
+      nextPage = currentPage + 1;
+    if (currentPage !== pages.length) {
+      slider.scrollBy({
+        left: 1360,
+        behavior: 'smooth'
+      })
     } else {
-      if (pageIndex === pageCount) {
-        window.location.href = url + relatedProducts.length;
-      } else {
-        window.location.href = url + (pageIndex * 6);
-      }
+      slider.scrollTo({
+        left: slider.scrollWidth,
+        behavior: 'smooth'
+      })
     }
-
-    setCurrentPage(pageIndex);
   }
 
+  setCurrentPage(nextPage);
+}
+
+const pageSelect = (event, pageIndex) => {
+  const slider = document.getElementById('tile-slider')
+  slider.scrollTo({
+    left: 1360 * (pageIndex - 1),
+    behavior: 'smooth'
+  })
+
+  setCurrentPage(pageIndex);
+}
+
   return (
-    <div className="tile-slider-container">
-      <div className="image-slider-header">
-        <h2 className="slider-header">Customers also bought these products</h2>
+    <div id="tile-slider-container">
+      <div id="tile-slider-header">
+        <h2>Customers also bought these products</h2>
       </div>
-      <div className="image-slider-contain">
-        <ul className="slider">
-          {relatedProducts.map((product, index) => (
-            <ProductTile
-              key={product.id}
-              className="slide"
-              index={index}
-              product={product}
-            />
-          ))}
-        </ul>
+      <div id="tile-slider">
+        {relatedProducts.map((product, index) => (
+          <ProductTile key={product.id} product={product} index={index} />
+        ))}
       </div>
+
       <div className="slide-pagination-left">
         <img
           className={'hidden-' + (currentPage == 1)}
           src={pageLeft}
           alt="next page forward button"
-          onClick={(e) => {pageSelect(e, (currentPage - 1), pages.length)}}  />
+          onClick={(e) => {pageScroll(e, 'left')}}  />
       </div>
       <div className="slide-pagination-right">
         <img
           className={'hidden-' + (currentPage == pages.length)}
           src={pageRight}
           alt="next page forward button"
-          onClick={(e) => {pageSelect(e, (currentPage + 1), pages.length)}}  />
+          onClick={(e) => {pageScroll(e, 'right')}}  />
       </div>
       <div className="slide-pagination-bottom">
         {pages.map((page, index, pages) => (
