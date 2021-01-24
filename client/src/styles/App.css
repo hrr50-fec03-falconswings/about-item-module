@@ -47,4 +47,8 @@ body {
   display: none;
 }
 
+.display-blank {
+  height: 1.5rem;
+}
+
 

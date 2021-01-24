@@ -26,7 +26,9 @@ const ProdTile = ({ product, index }) => {
         </div>
         <div className="tile-content">
           <div className="tile-content-label">
-            {(product.sponsored == 1) && "Sponsored"}
+            {(product.sponsored == 1)
+              ? "Sponsored"
+              : <div className="display-blank"></div> }
           </div>
           <br/>
           <div className="tile-content-title">

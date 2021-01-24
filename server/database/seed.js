@@ -35,11 +35,6 @@ const seedDatabase = () => {
 
     // * CREATE IMAGES ARRAY FOR PRODUCT
 
-
-
-    // https://hrr50-fec-images.s3-us-west-1.amazonaws.com/images/img_69.jpeg
-
-
     let productImages = [];
     while (productImages.length < 8) {
       let rand = Math.floor(Math.random() * (70 - 1) + 1);
@@ -71,14 +66,14 @@ const seedDatabase = () => {
 
     specifications = JSON.stringify(specifications);
 
-    // * special column
+    // * special & sponsored columns
 
     const specialOptions = [
       'rollback',
       'reduced',
       'lowstock',
       'newitem'
-    ]
+    ];
 
     let special = '';
     let sponsored = false;
