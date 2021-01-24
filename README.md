@@ -26,9 +26,9 @@
   
 ### $ npm run db:seed
 
-### Next we'll launch our client and server apps in two separate terminals:
-### $ npm run build (first running terminal)
-### $ npm start (second running terminal)
+### Next, in two separate terminals:
+### $ npm run build (first terminal)
+### $ npm start (second terminal)
 
 ## Requirements
 
