@@ -15,9 +15,9 @@ const ReviewStars = ({ reviewAvg, reviewTotal }) => {
       totalStars.push(1);
     }
     if (reviewAvg % 2 !== 0) {
-      if (reviewAvg % 1 < 0.05) {
+      if (reviewAvg % 1 < 0.3) {
         totalStars.push(0)
-      } else if (reviewAvg % 1 > 0.98) {
+      } else if (reviewAvg % 1 > 0.95) {
         totalStars.push(1)
       } else {
         totalStars.push(.5);

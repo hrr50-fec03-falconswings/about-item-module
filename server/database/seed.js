@@ -19,12 +19,14 @@ const seedDatabase = () => {
       ['Release Date', moment(faker.date.past(10)).format('MMMM Do YYYY')]
     ],
     '',
+    '',
+    false,
     false,
     'mouse'
   ];
   firstEntry[6] = JSON.stringify(firstEntry[6]);
 
-  let firstQuery = 'insert into products (name, images, price, reviews_avg, reviews_total, details, specifications, special, sponsored, product_category) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  let firstQuery = 'insert into products (name, images, price, reviews_avg, reviews_total, details, specifications, special, delivery, item_bundle, sponsored, product_category) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
   db.query(firstQuery, firstEntry, (error,results) => {
     error ? console.error(error) : console.log(results);
@@ -68,6 +70,11 @@ const seedDatabase = () => {
 
     // * special & sponsored columns
 
+    const deliveryOptions = [
+      'twoday',
+      'nextday'
+    ];
+
     const specialOptions = [
       'rollback',
       'reduced',
@@ -76,12 +83,21 @@ const seedDatabase = () => {
     ];
 
     let special = '';
+    let delivery = '';
     let sponsored = false;
+    let bundle = false;
     if (Math.random() > 0.90) {
       sponsored = true;
     }
-    if (Math.random() < 0.05) {
+    if (Math.random() < 0.1) {
       special = specialOptions[Math.floor(Math.random() * 4)];
+    }
+    if (Math.random() > 0.7) {
+      delivery = 'twoday'
+      // delivery = deliveryOptions[Math.floor(Math.random() * 2)];
+    }
+    if (Math.random() < 0.8) {
+      bundle = true;
     }
 
     let product = [
@@ -93,6 +109,8 @@ const seedDatabase = () => {
       faker.lorem.paragraphs((Math.floor(Math.random() * 7))),
       specifications,
       special,
+      delivery,
+      bundle,
       sponsored,
       faker.commerce.product()
     ];
@@ -101,7 +119,7 @@ const seedDatabase = () => {
   }
 
   initProducts.forEach((product) => {
-    let queryString = 'insert into products (name, images, price, reviews_avg, reviews_total, details, specifications, special, sponsored, product_category) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    let queryString = 'insert into products (name, images, price, reviews_avg, reviews_total, details, specifications, special, delivery, item_bundle, sponsored, product_category) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
     db.query(queryString, product, (error, results) => {
       error ? console.error(error) : console.log(results);

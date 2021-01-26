@@ -14,7 +14,7 @@
 #tile-slider {
   grid-row: 2;
 
-  height: 384.66px;
+  /* height: 384.66px; */
   width: 100%;
   display: flex;
   overflow-x: hidden;
@@ -25,7 +25,8 @@
 .slide-pagination-left > img {
   cursor: pointer;
   position: absolute;
-  top: 58%;
+  top: 54%;
+  left: 1%;
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -38,7 +39,7 @@
 .slide-pagination-right > img {
   cursor: pointer;
   position: absolute;
-  top: 58%;
+  top: 54%;
   width: 40px;
   height: 40px;
   border-radius: 100%;

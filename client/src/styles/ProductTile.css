@@ -1,7 +1,16 @@
+.tile-slide > a {
+  color: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  text-decoration: none;
+}
 .tile-slide {
   max-width: 211px;
-  height: 384.66px;
+  /* height: 384.66px; */
+  height: auto;
+  /* height: 414.66px; */
   flex-shrink: 0;
+  margin-top: 2rem;
   margin: 0rem .5rem;
 
   position: relative;
@@ -48,6 +57,7 @@
 
 .tile-content-label {
   color: #949499;
+  height: 1.3125rem;
 }
 
 .tile-content-reviews {

@@ -48,7 +48,8 @@ body {
 }
 
 .display-blank {
-  height: 1.5rem;
+  height: 1.3125rem;
+  font-size: .875rem;
 }
 
 
