@@ -25,20 +25,28 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.productService.getProduct(1, (results) => {
+    this.setProductAndCategory();
+  }
+
+  setProductAndCategory(event, prodId = 1) {
+    if (event) event.preventDefault();
+    this.productService.getProduct(prodId, (results) => {
       console.log(results);
+      this.setState({
+        selectedProduct: results
+      });
       this.productService.getProductCategory(results.product_category, (results) => {
-        let selected = results.splice(0, 1);
+        let deleted = results.splice(0, 1);
         let related = [...results];
         console.log(related)
         this.setState({
-          selectedProduct: selected[0],
           relatedProducts: related,
           currentPage: 1
         });
       })
     });
   }
+
 
   setCurrentPage(val) {
     this.setState({
@@ -54,7 +62,8 @@ class App extends React.Component {
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts}
           currentPage={this.state.currentPage}
-          setCurrentPage={this.setCurrentPage.bind(this)} />
+          setCurrentPage={this.setCurrentPage.bind(this)}
+          setProductAndCategory={this.setProductAndCategory.bind(this)} />
         <ProductInfo
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts} />
