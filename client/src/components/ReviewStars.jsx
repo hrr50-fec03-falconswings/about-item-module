@@ -48,7 +48,7 @@ const ReviewStars = ({ reviewAvg, reviewTotal }) => {
         }
       })}
       <div className="tile-content-reviews-total">
-        <a href="">{reviewTotal}</a>
+        <p>{reviewTotal}</p>
       </div>
     </div>
   );

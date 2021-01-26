@@ -8,7 +8,7 @@ import s from '../styles/ProductTile.css';
 import ReviewStars from './ReviewStars';
 
 
-const ProdTile = ({ product, index }) => {
+const ProdTile = ({ product, index, setProductAndCategory }) => {
   const rand = () => Math.random();
   if (product) {
     let specialText = '';
@@ -21,7 +21,7 @@ const ProdTile = ({ product, index }) => {
     if (product.delivery == 'nextday') { deliveryText = '' }
     return (
       <div className="tile-slide">
-        <a href="">
+        <a onClick={(e) => { setProductAndCategory(e, product.id) }} >
           <div className="tile-image">
             <div className="tile-flag">
               {(specialText.length > 0) && <span className={product.special + '-flag'}>{specialText}</span>}
@@ -56,7 +56,7 @@ const ProdTile = ({ product, index }) => {
             </div>
             <div className="tile-shipping-info">
               {(product.delivery == 'twoday')
-                ? <div className="display-blank">{deliveryText}</div>
+                ? <div className="display-blank">{deliveryText}</ div>
                 : (product.delivery == 'nextday')
                 ? <div className="nextday-shipping">{deliveryText}</div>
                 : <div className="display-blank"></div>

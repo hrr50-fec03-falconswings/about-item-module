@@ -4,13 +4,16 @@ const moment = require('moment');
 
 const seedDatabase = () => {
   // first entry matches main product page for showcase
+  let firstParagraph = faker.lorem.lines(Math.floor(Math.random() * (7 - 5) + 5));
+  firstParagraph += faker.lorem.paragraphs(Math.floor(Math.random() * (4 - 3) + 3));
   let firstEntry = [
     `Xbox One S ${faker.company.bs()}`,
     '["https://cdn.pocket-lint.com/r/s/1200x/assets/images/148296-games-review-xbox-one-s-all-digital-edition-product-shots-image1-xct4hs5njv.jpg", "https://compass-ssl.surface.com/assets/9e/cc/9eccdb3c-e965-4ab7-97d2-651c5f5a7fbe.jpg?n=Consoles-Hub_Content-Placement_Hub-SX_788x444.jpg"]',
     '229.95',
     4.2,
     2041,
-    faker.lorem.paragraphs((Math.floor(Math.random() * 7))),
+    firstParagraph,
+    // faker.lorem.paragraphs(Math.floor(Math.random() * (15 - 5) + 5)),
     [
       [ 'Brand', 'Xbox' ],
       [ 'Manufacturer Part Number', 'xb1' ],
@@ -60,10 +63,10 @@ const seedDatabase = () => {
       ['Release Date', moment(faker.date.past(5)).format('MMMM Do YYYY')]
     ];
 
-    let numSpecs = Math.floor(Math.random() * (12 - 3) + 3);
+    let numSpecs = Math.floor(Math.random() * (12 - 6) + 6);
     let specifications = [];
     for (let i = 0; i < numSpecs; i++) {
-      if (Math.random() > 0.25) specifications.push(possibleSpecItems[i]);
+      if (Math.random() > 0.15) specifications.push(possibleSpecItems[i]);
     }
 
     specifications = JSON.stringify(specifications);
@@ -89,7 +92,7 @@ const seedDatabase = () => {
     if (Math.random() > 0.90) {
       sponsored = true;
     }
-    if (Math.random() < 0.1) {
+    if (Math.random() < 0.3) {
       special = specialOptions[Math.floor(Math.random() * 4)];
     }
     if (Math.random() > 0.7) {
@@ -106,7 +109,7 @@ const seedDatabase = () => {
       faker.commerce.price(),
       (Math.random() * 5),
       Math.floor(Math.random() * 30000),
-      faker.lorem.paragraphs((Math.floor(Math.random() * 7))),
+      faker.lorem.paragraphs(Math.floor(Math.random() * (25 - 6) + 6)),
       specifications,
       special,
       delivery,

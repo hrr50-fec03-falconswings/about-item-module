@@ -3,7 +3,9 @@
   font-size: inherit;
   font-style: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
+
 .tile-slide {
   max-width: 211px;
   /* height: 384.66px; */
@@ -65,10 +67,11 @@
   align-items: center;
 }
 
-.tile-content-reviews-total > a {
+.tile-content-reviews-total > p {
   margin-left: 1rem;
   font-size: .75rem;
   color: black;
+  text-decoration: underline;
 }
 
 .price-black {

@@ -7,7 +7,6 @@
 }
 
 .disclaimer-button-wrapper {
-  /* forces the a tag to stay on one line */
   white-space: nowrap;
   color: rgb(40, 40, 40);
 }

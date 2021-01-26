@@ -14,7 +14,7 @@ import pageRight from '../assets/icons/page_right.svg';
 // import child component(s)
 import ProductTile from './ProductTile';
 
-const TileSlider = ({ relatedProducts, currentPage, setCurrentPage }) => {
+const TileSlider = ({ relatedProducts, currentPage, setCurrentPage, setProductAndCategory }) => {
 
   let nextPage;
   let products = [...relatedProducts];
@@ -72,7 +72,7 @@ const pageSelect = (event, pageIndex) => {
       </div>
       <div id="tile-slider">
         {relatedProducts.map((product, index) => (
-          <ProductTile key={product.id} product={product} index={index} />
+          <ProductTile key={product.id} product={product} index={index} setProductAndCategory={setProductAndCategory} />
         ))}
       </div>
       <div className="slide-pagination-left">
