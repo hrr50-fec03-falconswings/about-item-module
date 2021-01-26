@@ -3,7 +3,7 @@ import React from 'react';
 // import css module
 import s from '../styles/TileSlider.css';
 
-// import external font library
+// import external icon library
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -24,9 +24,6 @@ const TileSlider = ({ relatedProducts, currentPage, setCurrentPage }) => {
 
   const pageScroll = (event, direction) => {
     const slider = document.getElementById('tile-slider');
-    let offset = slider.scrollWidth % 1360;
-    if (offset < 100) offset = 1360;
-
     if (direction == 'left') {
       nextPage = currentPage - 1;
       if (currentPage !== pages.length) {
@@ -35,30 +32,29 @@ const TileSlider = ({ relatedProducts, currentPage, setCurrentPage }) => {
           behavior: 'smooth'
         })
       } else {
-        console.log('here')
+        let offset = slider.scrollWidth % 1360;
+        if (offset < 100) offset = 1360;
         slider.scrollBy({
           left: -offset,
           behavior: 'smooth'
         })
       }
-
     } else { // direction == 'right'
       nextPage = currentPage + 1;
-    if (currentPage !== pages.length) {
-      slider.scrollBy({
-        left: 1360,
-        behavior: 'smooth'
-      })
-    } else {
-      slider.scrollTo({
-        left: slider.scrollWidth,
-        behavior: 'smooth'
-      })
+      if (currentPage !== pages.length) {
+        slider.scrollBy({
+          left: 1360,
+          behavior: 'smooth'
+        })
+      } else {
+        slider.scrollTo({
+          left: slider.scrollWidth,
+          behavior: 'smooth'
+        })
+      }
     }
+    setCurrentPage(nextPage);
   }
-
-  setCurrentPage(nextPage);
-}
 
 const pageSelect = (event, pageIndex) => {
   const slider = document.getElementById('tile-slider')
@@ -66,7 +62,6 @@ const pageSelect = (event, pageIndex) => {
     left: 1360 * (pageIndex - 1),
     behavior: 'smooth'
   })
-
   setCurrentPage(pageIndex);
 }
 
@@ -80,9 +75,9 @@ const pageSelect = (event, pageIndex) => {
           <ProductTile key={product.id} product={product} index={index} />
         ))}
       </div>
-
       <div className="slide-pagination-left">
         <img
+          id="slider-left-btn"
           className={'hidden-' + (currentPage == 1)}
           src={pageLeft}
           alt="next page forward button"
@@ -90,6 +85,7 @@ const pageSelect = (event, pageIndex) => {
       </div>
       <div className="slide-pagination-right">
         <img
+          id="slider-right-btn"
           className={'hidden-' + (currentPage == pages.length)}
           src={pageRight}
           alt="next page forward button"

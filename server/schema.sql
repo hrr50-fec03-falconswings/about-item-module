@@ -12,6 +12,8 @@ create table products (
   details MEDIUMTEXT NOT NULL,
   specifications MEDIUMTEXT NOT NULL,
   special VARCHAR(20) NOT NULL,
+  delivery VARCHAR(20) NOT NULL,
+  item_bundle BOOLEAN NOT NULL,
   sponsored BOOLEAN NOT NULL,
   product_category VARCHAR(30) NOT NULL,
   PRIMARY KEY (id)
