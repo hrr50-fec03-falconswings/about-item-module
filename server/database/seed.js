@@ -12,8 +12,8 @@ const seedDatabase = () => {
     '229.95',
     4.2,
     2041,
-    firstParagraph,
-    // faker.lorem.paragraphs(Math.floor(Math.random() * (15 - 5) + 5)),
+    // firstParagraph,
+    faker.lorem.paragraphs(Math.floor(Math.random() * (15 - 5) + 5)),
     [
       [ 'Brand', 'Xbox' ],
       [ 'Manufacturer Part Number', 'xb1' ],
