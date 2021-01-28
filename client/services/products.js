@@ -9,7 +9,6 @@ module.exports = {
       .then(response => response.text())
       .then(result => {
         result = JSON.parse(result);
-        result[0].details = JSON.parse(result[0].details);
         result[0].specifications = JSON.parse(result[0].specifications);
         result[0].images = JSON.parse(result[0].images);
         callback(result[0]);
@@ -27,7 +26,6 @@ module.exports = {
       .then(result => {
         result = JSON.parse(result);
         result.forEach((product) => {
-          product.details = JSON.parse(product.details);
           product.specifications = JSON.parse(product.specifications);
           product.images = JSON.parse(product.images);
         })
