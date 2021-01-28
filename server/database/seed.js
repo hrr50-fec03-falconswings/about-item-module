@@ -12,14 +12,7 @@ const seedDatabase = () => {
     '229.95',
     4.2,
     2041,
-    [
-      [
-        faker.lorem.paragraphs(Math.floor(Math.random() * (7 - 4) + 4)),
-      ],
-      [
-        faker.lorem.paragraphs(Math.floor(Math.random() * (15 - 7) + 8))
-      ]
-    ],
+    faker.lorem.paragraphs(Math.floor(Math.random() * (15 - 7) + 7)),
     [
       [ 'Brand', 'Xbox' ],
       [ 'Manufacturer Part Number', 'xb1' ],
@@ -34,7 +27,6 @@ const seedDatabase = () => {
     'mouse'
   ];
 
-  firstEntry[5] = JSON.stringify(firstEntry[5]);
   firstEntry[6] = JSON.stringify(firstEntry[6]);
 
   let firstQuery = 'insert into products (name, images, price, reviews_avg, reviews_total, details, specifications, special, delivery, item_bundle, sponsored, product_category) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
@@ -54,14 +46,6 @@ const seedDatabase = () => {
       productImages.push(`https://hrr50-fec-images.s3-us-west-1.amazonaws.com/images/img_${rand}.jpeg`);
     }
     productImages = JSON.stringify(productImages);
-
-    // * details column
-    let prodDetails = [
-      faker.lorem.paragraphs(Math.floor(Math.random() * (12 - 5) + 5)),
-      faker.lorem.paragraphs(Math.floor(Math.random() * (22 - 15) + 15))
-    ];
-
-    prodDetails = JSON.stringify(prodDetails);
 
     // * specifications column
 
@@ -125,7 +109,7 @@ const seedDatabase = () => {
       faker.commerce.price(),
       (Math.random() * 5),
       Math.floor(Math.random() * 30000),
-      prodDetails,
+      faker.lorem.paragraphs(Math.floor(Math.random() * (15 - 7) + 7)),
       specifications,
       special,
       delivery,
