@@ -12,13 +12,15 @@
     "db:seed": "node server/database/seed.js",
     "build": "webpack --watch",
     "start": "nodemon server -w",
-    "test": "jest"
+    "test": "jest",
+    "aws": "bash login.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "moment": "^2.29.1",

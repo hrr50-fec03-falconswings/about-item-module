@@ -31,14 +31,12 @@ class App extends React.Component {
   setProductAndCategory(event, prodId = 1) {
     if (event) event.preventDefault();
     this.productService.getProduct(prodId, (results) => {
-      console.log(results);
       this.setState({
         selectedProduct: results
       });
       this.productService.getProductCategory(results.product_category, (results) => {
         let deleted = results.splice(0, 1);
         let related = [...results];
-        console.log(related)
         this.setState({
           relatedProducts: related,
           currentPage: 1
