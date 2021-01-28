@@ -1,13 +1,13 @@
-# Project Name
+# HRR50-FEC-FALCON
 
 > Project description
+Service Oriented Architecture / Interface project building out several front-end facing module components using React, Express, Node and MySQL.
+A proxy server is used for deployment - url: !!! LINK HERE !!!!
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrr50-fec03-falconswings/eric-ebay
+  - https://github.com/hrr50-fec03-falconswings/ndw001_module
 
 ## Table of Contents
 
@@ -21,14 +21,23 @@
 
 ### $ npm install
 
-### $ npm run db:build 
+### $ npm run db:build
   - note: this will drop any local mysql db named 'products_db'
-  
+
 ### $ npm run db:seed
 
-### Next, in two separate terminals:
+### (Dev) In two separate terminals:
 ### $ npm run build (first terminal)
 ### $ npm start (second terminal)
+
+### (Prod)
+### $ webpack
+### $ npm start
+
+### login to AWS EC2 instance
+### $ npm run aws
+
+
 
 ## Requirements
 
