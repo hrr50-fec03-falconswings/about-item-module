@@ -73,11 +73,6 @@ const seedDatabase = () => {
 
     // * special & sponsored columns
 
-    const deliveryOptions = [
-      'twoday',
-      'nextday'
-    ];
-
     const specialOptions = [
       'rollback',
       'reduced',
@@ -97,7 +92,6 @@ const seedDatabase = () => {
     }
     if (Math.random() > 0.7) {
       delivery = 'twoday'
-      // delivery = deliveryOptions[Math.floor(Math.random() * 2)];
     }
     if (Math.random() < 0.8) {
       bundle = true;
@@ -133,7 +127,3 @@ const seedDatabase = () => {
 }
 
 seedDatabase();
-
-
-
-// Use with digital games only; console does not play physical discs. 4K at 120 FPS: Requires supported content and display; use on Xbox Series X as content becomes available. 8K: Requires supported content and display. Use on Xbox Series X as content becomes available. Xbox Game Pass: Membership sold separately. Game catalog varies over time and by region (xbox.com/gamepass). 120 FPS: Requires supported content and display; use on Xbox Series X & S as content becomes available. 4K streaming: with select apps, see xbox.com. Some apps require app provider-specific subscriptions and/or other requirements.
