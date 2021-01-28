@@ -1,0 +1,1 @@
+ssh -i "/Users/kyleperra/Desktop/dev/hackr/sei/w6/about-item-module/hrf50-fec-indiv.pem" ubuntu@ec2-54-151-122-160.us-west-1.compute.amazonaws.com
