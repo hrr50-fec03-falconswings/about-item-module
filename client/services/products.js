@@ -12,7 +12,6 @@ module.exports = {
         result[0].details = JSON.parse(result[0].details);
         result[0].specifications = JSON.parse(result[0].specifications);
         result[0].images = JSON.parse(result[0].images);
-        debugger;
         callback(result[0]);
       })
       .catch(error => console.error('error ', error));
