@@ -10,6 +10,8 @@ import ProductInfo from './ProductInfo';
 // lazy loaded
 const TileSlider = lazy(() => import('./TileSlider'));
 
+// suspense placeholder component
+const renderLoader = () => <p>Loading</p>;
 
 
 
@@ -56,8 +58,6 @@ class App extends React.Component {
     });
   }
 
-  // suspense placeholder component
-  const renderLoader = () => <p>Loading</p>;
 
   render() {
     return (
