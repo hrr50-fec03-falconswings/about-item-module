@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cacheAssets = (req, res, next) => {
   const time = 60 * 10; // 10 minutes
   if (req.method == 'GET') {
-    res.set('Cache-control', `public, max-age=${period}`)
+    res.set('Cache-control', `public, max-age=${time}`)
   } else {
     res.set('Cache-control', `no-store`)
   }

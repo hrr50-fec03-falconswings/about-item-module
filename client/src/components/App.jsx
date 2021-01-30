@@ -5,9 +5,14 @@ import faker from 'faker';
 import s from '../styles/App.css';
 
 // import child component(s)
-import TileSlider from './TileSlider';
+// import TileSlider from './TileSlider';
 import ProductTile from './ProductTile';
 import ProductInfo from './ProductInfo';
+
+const TileSlider = lazy(() => import('./TileSlider'));
+const renderLoader = () => <p>Loading</p>;
+
+
 
 
 class App extends React.Component {
@@ -55,13 +60,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-render">
-        <TileSlider
-          className="tile-slider-container"
-          selectedProduct={this.state.selectedProduct}
-          relatedProducts={this.state.relatedProducts}
-          currentPage={this.state.currentPage}
-          setCurrentPage={this.setCurrentPage.bind(this)}
-          setProductAndCategory={this.setProductAndCategory.bind(this)} />
+        <Suspense fallback={renderLoader()}>
+          <TileSlider
+            className="tile-slider-container"
+            selectedProduct={this.state.selectedProduct}
+            relatedProducts={this.state.relatedProducts}
+            currentPage={this.state.currentPage}
+            setCurrentPage={this.setCurrentPage.bind(this)}
+            setProductAndCategory={this.setProductAndCategory.bind(this)} />
+        </Suspense>
         <ProductInfo
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts} />
