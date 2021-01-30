@@ -8,10 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "db:build": "mysql -u root -p < server/schema.sql",
+    "db:build": "sudo mysql -u root -p < server/schema.sql",
     "db:seed": "node server/database/seed.js",
-    "build": "webpack --watch",
-    "start": "nodemon server -w",
+    "build": "webpack",
+    "start": "node server",
     "test": "jest",
     "aws": "bash login.sh"
   },

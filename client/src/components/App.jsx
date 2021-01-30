@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import faker from 'faker';
 
 // import stylesheet
 import s from '../styles/App.css';
 
 // import child component(s)
-import TileSlider from './TileSlider';
 import ProductTile from './ProductTile';
 import ProductInfo from './ProductInfo';
+// lazy loaded
+const TileSlider = lazy(() => import('./TileSlider'));
+
+// suspense placeholder component
+const renderLoader = () => <p>Loading</p>;
+
+
 
 
 class App extends React.Component {
@@ -52,16 +58,19 @@ class App extends React.Component {
     });
   }
 
+
   render() {
     return (
       <div className="app-render">
-        <TileSlider
-          className="tile-slider-container"
-          selectedProduct={this.state.selectedProduct}
-          relatedProducts={this.state.relatedProducts}
-          currentPage={this.state.currentPage}
-          setCurrentPage={this.setCurrentPage.bind(this)}
-          setProductAndCategory={this.setProductAndCategory.bind(this)} />
+        <Suspense fallback={renderLoader()}>
+          <TileSlider
+            className="tile-slider-container"
+            selectedProduct={this.state.selectedProduct}
+            relatedProducts={this.state.relatedProducts}
+            currentPage={this.state.currentPage}
+            setCurrentPage={this.setCurrentPage.bind(this)}
+            setProductAndCategory={this.setProductAndCategory.bind(this)} />
+        </Suspense>
         <ProductInfo
           selectedProduct={this.state.selectedProduct}
           relatedProducts={this.state.relatedProducts} />

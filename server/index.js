@@ -13,6 +13,18 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const cacheAssets = (req, res, next) => {
+  const time = 60 * 10; // 10 minutes
+  if (req.method == 'GET') {
+    res.set('Cache-control', `public, max-age=${time}`)
+  } else {
+    res.set('Cache-control', `no-store`)
+  }
+  next();
+}
+
+app.use(cacheAssets);
+
 app.get('/api/products/id/:prodId', controllers.products.getProduct);
 
 app.get('/api/products/:category', controllers.products.getProductCategory);
