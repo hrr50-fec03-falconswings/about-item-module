@@ -5,7 +5,7 @@ module.exports = {
       redirect: 'follow'
     };
 
-    fetch(`http://localhost:3000/api/products/id/${prodId}`, requestOptions)
+    fetch(`/api/products/id/${prodId}`, requestOptions)
       .then(response => response.text())
       .then(result => {
         result = JSON.parse(result);
@@ -21,7 +21,7 @@ module.exports = {
         redirect: 'follow'
       };
 
-      fetch(`http://localhost:3000/api/products/${category}`, requestOptions)
+      fetch(`/api/products/${category}`, requestOptions)
       .then(response => response.text())
       .then(result => {
         result = JSON.parse(result);
