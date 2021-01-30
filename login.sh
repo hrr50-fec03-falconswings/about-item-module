@@ -1,1 +1,1 @@
-ssh -i "hrr50_fec.pem" ubuntu@ec2-50-18-130-46.us-west-1.compute.amazonaws.com
+ssh -i "hrr50_fec.pem" ubuntu@ec2-54-215-109-119.us-west-1.compute.amazonaws.com
