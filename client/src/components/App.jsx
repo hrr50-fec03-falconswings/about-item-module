@@ -5,12 +5,11 @@ import faker from 'faker';
 import s from '../styles/App.css';
 
 // import child component(s)
-// import TileSlider from './TileSlider';
 import ProductTile from './ProductTile';
 import ProductInfo from './ProductInfo';
-
+// lazy loaded
 const TileSlider = lazy(() => import('./TileSlider'));
-const renderLoader = () => <p>Loading</p>;
+
 
 
 
@@ -56,6 +55,9 @@ class App extends React.Component {
       currentPage: val
     });
   }
+
+  // suspense placeholder component
+  const renderLoader = () => <p>Loading</p>;
 
   render() {
     return (
